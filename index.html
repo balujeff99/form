@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sign Up</title>
+<script type="text/javascript">
+function validate(){
+var firstname=document.getElementById("firstname").value
+var firstnameCheck=/^[a-zA-Z ]+$/
+var email=document.getElementById("email").value;
+var emailCheck=/^[a-zA-Z0-9.#]+@[a-z]+\.[a-z]{2,3}$/
+var mobile=document.getElementById("mobile").value;
+var mobileCheck=/^[6-9]\d{9}$/;
+var password=document.getElementById("password").value;
+var passwordCheck=/^(?=.*?[@#$%&*-+])(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8}$/
+var male=document.getElementById("male")
+var female=document.getElementById("female")
+      
+     
+
+if(firstname==""||firstname.length<3){
+alert("Please enter your name")
+return false;
+}
+if(!firstname.match(firstnameCheck)){
+alert("Name must carry only characters")
+return false;
+}
+if(email==""){
+alert("Email id is mandatory")
+return false
+}
+if(!email.match(emailCheck)){
+alert("check email");
+return false
+}
+        if(!mobile.match(mobileCheck)){
+        alert("Provide proper mobile number")
+        return false;
+        }
+        if(password==""){
+        alert("Enter password");
+        return false
+        }
+        if(!password.match(passwordCheck)){
+        alert("password must carry one upper, lowercase digit and number also")
+        return false;
+        }
+        if(male.checked==false && female.checked==false){
+      alert("Gender is needed")
+      return false;
+      }
+
+return true;
+}
+</script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+
+</head>
+<body>
+<div class="container">
+<div class="row">
+<div class="col-12 text-center mt-5 mb-5">
+<h1>Registration page</h1>
+<form onsubmit="return validate()">
+<p>NAME:</p><p><input type="text" id="firstname" placeholder="Enter your name"></p>
+<p>EMAIL ID:</p><p><input type="text" id="email" placeholder="Enter your emailID"></p>
+<p>MOBILE:</p><p><input type="number"id="mobile" placeholder="enter your number"></p>
+<p>PASSWORD:</p><p><input type="password" id="password" placeholder="Enter your password"></p>
+<p>GENDER:</p><p>
+<input type="radio" id="female"name="gender"/>Female
+<input type="radio" id="male" name="gender"/>Male
+</p>
+<button onclick="validate()">Sign Up</button>
+</form>
+</div>
+</div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+</body>
+</html>
